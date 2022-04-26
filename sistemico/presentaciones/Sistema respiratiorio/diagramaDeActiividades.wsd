@@ -1,0 +1,97 @@
+@startuml
+!theme materia-outline
+|Diafragma|
+|Cavidad nasal|
+|Cavidad bucal|
+|Esófago|
+|Faringe|
+|Laringe, Traquea|
+|Bronquios|
+|Bronquiolos|
+|Alvéolos|
+|Capilares Arteriales|
+|Globulos rojos|
+
+|Diafragma|
+start
+:Contracción;
+
+split
+  |Cavidad nasal|
+  :Entrada de aire;
+  :Calentamiento de aire;
+split again
+  |Cavidad bucal|
+  :Entrada de aire;
+end split
+
+
+|Faringe|
+if (Es comida o aire) then (Alimentos)
+  |Esófago|
+  :Transporte de alimentos;
+  detach
+
+else (Aire)
+  |Laringe, Traquea|
+  :Transporte de aire;
+  |Bronquios|
+
+  if (filtración de aire con ayuda de los cilios) then (partículas)
+    :Recubrimiento de partículas en mucosa;
+    |Laringe, Traquea|
+    :Transporte de mucosa;
+    |Faringe|
+    :Transporte de mucosa;
+
+    split
+      |Cavidad nasal|
+      :Expulsión de partículas;
+      stop
+    split again
+      |Cavidad bucal|
+      :Expulsión de partículas;
+      stop
+    end split
+  else (aire)
+    |Bronquiolos|
+    :Transporte de aire;
+    |Alvéolos|
+    :Almacenamiento de aire;
+    |Capilares Arteriales|
+
+    fork
+      :Difusión de CO2 de las arterias a los Alvéolos por gradientes de concentración;
+    fork again
+      :Difusión de O2 de los Alvéolos a las arterias por gradientes de concentración;
+      |Globulos rojos|
+      :captación de partículas de O2 con ayuda de la hemoglobina presente en la célula;
+      detach
+      |Capilares Arteriales|
+    end fork
+    label space1
+    label space2
+    label space3
+    label space4
+    |Diafragma|
+    :Relajacion;
+    |Alvéolos|
+    :Expulsión de aire;
+    |Bronquiolos|
+    :Transporte de aire;
+    |Bronquios|
+    :Transporte de aire;
+    |Laringe, Traquea|
+    :Transporte de aire;
+    |Faringe|
+    :Transporte de aire;
+    split
+      |Cavidad nasal|
+      :Expulsión de aire;
+      stop
+    split again
+      |Cavidad bucal|
+      :Expulsión de aire;
+      stop
+    end split
+@enduml
