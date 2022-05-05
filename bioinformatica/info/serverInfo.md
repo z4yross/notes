@@ -9,4 +9,4 @@
 
 ## vpn
 
-> openconnect 168.176.241.70
+> sudo openconnect 168.176.241.70
